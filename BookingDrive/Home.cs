@@ -18,28 +18,30 @@ namespace BookingDrive
             lb_welcome.Text += username;
         }
 
-        private void Home_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult res;
-            res = MessageBox.Show("Bạn muốn thoát chương trình?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                this.Show();
-            }
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_logout_Click(object sender, EventArgs e)
         {
+            this.Close();
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OpenLoginForm));
+            t.Start();
+        }
 
+        public static void OpenLoginForm()
+        {
+            Application.Run(new Login());
+        }
+
+        private void btn_booking_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BookingForDriver booking = new BookingForDriver();
+            booking.ShowDialog();
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BookingForCustomer bookingForCustomer = new BookingForCustomer();
+            bookingForCustomer.ShowDialog();
         }
     }
 }

@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.lb_welcome = new System.Windows.Forms.Label();
             this.btn_logout = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_home = new System.Windows.Forms.Button();
+            this.btn_wallet = new System.Windows.Forms.Button();
+            this.btn_notification = new System.Windows.Forms.Button();
+            this.btn_booking = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_welcome
             // 
             this.lb_welcome.AutoSize = true;
             this.lb_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_welcome.Location = new System.Drawing.Point(30, 26);
+            this.lb_welcome.Location = new System.Drawing.Point(24, 30);
             this.lb_welcome.Name = "lb_welcome";
             this.lb_welcome.Size = new System.Drawing.Size(141, 31);
             this.lb_welcome.TabIndex = 0;
@@ -50,7 +54,7 @@
             // 
             // btn_logout
             // 
-            this.btn_logout.Location = new System.Drawing.Point(677, 26);
+            this.btn_logout.Location = new System.Drawing.Point(497, 30);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(75, 23);
             this.btn_logout.TabIndex = 1;
@@ -65,74 +69,95 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_home, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_wallet, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_notification, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_booking, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 402);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 408);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 59);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(584, 53);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // button1
+            // btn_home
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Trang chủ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_home.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_home.Location = new System.Drawing.Point(3, 3);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Size = new System.Drawing.Size(140, 47);
+            this.btn_home.TabIndex = 0;
+            this.btn_home.Text = "Trang chủ";
+            this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
-            // button2
+            // btn_wallet
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(591, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 53);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Ví";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_wallet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_wallet.Location = new System.Drawing.Point(441, 3);
+            this.btn_wallet.Name = "btn_wallet";
+            this.btn_wallet.Size = new System.Drawing.Size(140, 47);
+            this.btn_wallet.TabIndex = 1;
+            this.btn_wallet.Text = "Ví";
+            this.btn_wallet.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_notification
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(395, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(190, 53);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Thông báo";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_notification.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_notification.Location = new System.Drawing.Point(295, 3);
+            this.btn_notification.Name = "btn_notification";
+            this.btn_notification.Size = new System.Drawing.Size(140, 47);
+            this.btn_notification.TabIndex = 2;
+            this.btn_notification.Text = "Thông báo";
+            this.btn_notification.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_booking
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(199, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(190, 53);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Đơn hàng";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_booking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_booking.Location = new System.Drawing.Point(149, 3);
+            this.btn_booking.Name = "btn_booking";
+            this.btn_booking.Size = new System.Drawing.Size(140, 47);
+            this.btn_booking.TabIndex = 3;
+            this.btn_booking.Text = "Đặt xe";
+            this.btn_booking.UseVisualStyleBackColor = true;
+            this.btn_booking.Click += new System.EventHandler(this.btn_booking_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lb_welcome);
+            this.panel1.Controls.Add(this.btn_logout);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(584, 77);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 77);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(584, 331);
+            this.panel2.TabIndex = 4;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.btn_logout);
-            this.Controls.Add(this.lb_welcome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
-            this.Load += new System.EventHandler(this.Home_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -141,9 +166,11 @@
         private System.Windows.Forms.Label lb_welcome;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.Button btn_wallet;
+        private System.Windows.Forms.Button btn_notification;
+        private System.Windows.Forms.Button btn_booking;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

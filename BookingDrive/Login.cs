@@ -19,7 +19,7 @@ namespace BookingDrive
         SqlDataReader dr;
 
         string connection_string = @"Data Source=KHANHDINH; " +
-                                    "Initial Catalog=Data_Account; " +
+                                    "Initial Catalog=DataBase_Account; " +
                                     "Integrated Security=True";
 
         public Login()
@@ -38,21 +38,43 @@ namespace BookingDrive
         {
             if (tb_username.Text != string.Empty || tb_password.Text != string.Empty)
             {
-                string sql_query =  "SELECT * FROM LoginTable " +
+                if (cb_type.Text == "Người dùng")
+                {
+                    string sql_query = "SELECT * FROM Customers " +
                                     "WHERE username = '" + tb_username.Text + "' AND password = '" + tb_password.Text + "'";
-                cmd = new SqlCommand(sql_query, cn);
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    dr.Close();
-                    this.Hide();
-                    Home home = new Home(tb_username.Text);
-                    home.ShowDialog();
+                    cmd = new SqlCommand(sql_query, cn);
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        dr.Close();
+                        this.Hide();
+                        Home home = new Home(tb_username.Text);
+                        home.ShowDialog();
+                    }
+                    else
+                    {
+                        dr.Close();
+                        MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                if(cb_type.Text == "Người lái xe")
                 {
-                    dr.Close();
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string sql_query = "SELECT * FROM Drivers " +
+                                    "WHERE username = '" + tb_username.Text + "' AND password = '" + tb_password.Text + "'";
+                    cmd = new SqlCommand(sql_query, cn);
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        dr.Close();
+                        this.Hide();
+                        Home home = new Home(tb_username.Text);
+                        home.ShowDialog();
+                    }
+                    else
+                    {
+                        dr.Close();
+                        MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -82,9 +104,9 @@ namespace BookingDrive
             register.ShowDialog();
         }
 
-        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        private void cb_type_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            e.Handled = true;  
         }
     }
 }

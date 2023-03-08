@@ -1,0 +1,29 @@
+{
+  "location": [
+    {
+      "Address": "Văn Miếu – Quốc Tử Giám",
+      "Longitude": 21.028940552803792,
+      "Latitude": 105.83578514822061
+    },
+    {
+      "Address": "Vinhomes Royal City",
+      "Longitude": 21.002131906108215,
+      "Latitude": 105.8159917720936
+    },
+    {
+      "Address": "Ga Thái Hà",
+      "Longitude": 21.01536175740447,
+      "Latitude": 105.8196149343623
+    },
+    {
+      "Address": "Trường Đại Học Kinh Tế Quốc Dân",
+      "Longitude": 21.001366044950043,
+      "Latitude": 105.84253618624354
+    },
+    {
+      "Address": "Trung tâm Chiếu phim Quốc gia",
+      "Longitude": 21.018010254247653,
+      "Latitude": 105.81630234537107
+    }
+  ]
+}
