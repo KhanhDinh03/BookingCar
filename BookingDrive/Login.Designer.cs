@@ -37,8 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.linklb_register = new System.Windows.Forms.LinkLabel();
             this.btn_exit = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cb_type = new System.Windows.Forms.ComboBox();
+            this.btn_hidepassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,9 +75,8 @@
             this.tb_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_password.Location = new System.Drawing.Point(204, 162);
-            this.tb_password.Multiline = true;
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(238, 25);
+            this.tb_password.Size = new System.Drawing.Size(238, 22);
             this.tb_password.TabIndex = 3;
             // 
             // btn_login
@@ -122,36 +120,26 @@
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
-            // label5
+            // btn_hidepassword
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(22, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 25);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Loại tài khoản";
-            // 
-            // cb_type
-            // 
-            this.cb_type.FormattingEnabled = true;
-            this.cb_type.Items.AddRange(new object[] {
-            "Người lái xe",
-            "Người dùng"});
-            this.cb_type.Location = new System.Drawing.Point(204, 79);
-            this.cb_type.Name = "cb_type";
-            this.cb_type.Size = new System.Drawing.Size(238, 21);
-            this.cb_type.TabIndex = 1;
-            this.cb_type.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_type_KeyPress);
+            this.btn_hidepassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_hidepassword.Image")));
+            this.btn_hidepassword.Location = new System.Drawing.Point(454, 163);
+            this.btn_hidepassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_hidepassword.Name = "btn_hidepassword";
+            this.btn_hidepassword.Size = new System.Drawing.Size(20, 19);
+            this.btn_hidepassword.TabIndex = 23;
+            this.btn_hidepassword.UseVisualStyleBackColor = true;
+            this.btn_hidepassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_hidepassword_MouseDown);
+            this.btn_hidepassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_hidepassword_MouseUp);
             // 
             // Login
             // 
+            this.AcceptButton = this.btn_login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(484, 311);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cb_type);
+            this.Controls.Add(this.btn_hidepassword);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.linklb_register);
             this.Controls.Add(this.label3);
@@ -165,6 +153,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,8 +170,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linklb_register;
         private System.Windows.Forms.Button btn_exit;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cb_type;
+        private System.Windows.Forms.Button btn_hidepassword;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace BookingDrive
 {
-    partial class Home
+    partial class History
     {
         /// <summary>
         /// Required designer variable.
@@ -28,39 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.lb_welcome = new System.Windows.Forms.Label();
-            this.btn_logout = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_wallet = new System.Windows.Forms.Button();
             this.btn_history = new System.Windows.Forms.Button();
             this.btn_booking = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lb_welcome
-            // 
-            this.lb_welcome.AutoSize = true;
-            this.lb_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_welcome.Location = new System.Drawing.Point(24, 30);
-            this.lb_welcome.Name = "lb_welcome";
-            this.lb_welcome.Size = new System.Drawing.Size(141, 31);
-            this.lb_welcome.TabIndex = 0;
-            this.lb_welcome.Text = "Xin chào,  ";
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.Location = new System.Drawing.Point(666, 30);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(75, 23);
-            this.btn_logout.TabIndex = 1;
-            this.btn_logout.Text = "Đăng xuất";
-            this.btn_logout.UseVisualStyleBackColor = true;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -79,7 +58,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 53);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // btn_home
             // 
@@ -90,6 +69,7 @@
             this.btn_home.TabIndex = 0;
             this.btn_home.Text = "Trang chủ";
             this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // btn_wallet
             // 
@@ -111,7 +91,6 @@
             this.btn_history.TabIndex = 2;
             this.btn_history.Text = "Lịch sử";
             this.btn_history.UseVisualStyleBackColor = true;
-            this.btn_history.Click += new System.EventHandler(this.btn_history_Click);
             // 
             // btn_booking
             // 
@@ -126,53 +105,69 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lb_welcome);
-            this.panel1.Controls.Add(this.btn_logout);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 77);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(784, 100);
+            this.panel1.TabIndex = 4;
             // 
-            // panel2
+            // label1
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 77);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 531);
-            this.panel2.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(257, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(238, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Lịch Sử Chuyến Đi";
             // 
-            // Home
+            // dataGridView
+            // 
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Enabled = false;
+            this.dataGridView.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView.Location = new System.Drawing.Point(0, 100);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(784, 508);
+            this.dataGridView.TabIndex = 5;
+            this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
+            // 
+            // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 661);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Home";
+            this.Name = "History";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trang chủ";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
+            this.Text = "Lịch sử";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.History_FormClosing);
+            this.Load += new System.EventHandler(this.Historycs_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lb_welcome;
-        private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button btn_wallet;
         private System.Windows.Forms.Button btn_history;
         private System.Windows.Forms.Button btn_booking;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }

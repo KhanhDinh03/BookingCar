@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BookingDrive
 {
@@ -17,9 +16,10 @@ namespace BookingDrive
         SqlCommand cmd;
         SqlConnection cn;
         SqlDataReader dr;
+        string fullname, username;
 
         string connection_string = @"Data Source=KHANHDINH; " +
-                                    "Initial Catalog=DataBase_Account; " +
+                                    "Initial Catalog=Data_Account; " +
                                     "Integrated Security=True";
 
         public Login()
@@ -37,44 +37,33 @@ namespace BookingDrive
         private void btn_login_Click(object sender, EventArgs e)
         {
             if (tb_username.Text != string.Empty || tb_password.Text != string.Empty)
-            {
-                if (cb_type.Text == "Người dùng")
-                {
-                    string sql_query = "SELECT * FROM Customers " +
+            {  
+                string sql_query = "SELECT * FROM Customers " +
                                     "WHERE username = '" + tb_username.Text + "' AND password = '" + tb_password.Text + "'";
-                    cmd = new SqlCommand(sql_query, cn);
+                cmd = new SqlCommand(sql_query, cn);
+                dr = cmd.ExecuteReader();
+                    
+                if (dr.Read())
+                {
+                    dr.Close();
+                    string sql_query1 = "SELECT fullname, username FROM Customers " +
+                                "WHERE username = '" + tb_username.Text + "'";
+                    cmd = new SqlCommand(sql_query1, cn);
                     dr = cmd.ExecuteReader();
-                    if (dr.Read())
+                    while (dr.Read())
                     {
-                        dr.Close();
-                        this.Hide();
-                        Home home = new Home(tb_username.Text);
-                        home.ShowDialog();
+                        fullname = dr.GetString(0);
+                        username = dr.GetString(1);
                     }
-                    else
-                    {
-                        dr.Close();
-                        MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    this.Hide();
+                    Home home = new Home(fullname, username);                   
+                    home.ShowDialog();
                 }
-                if(cb_type.Text == "Người lái xe")
+                else
                 {
-                    string sql_query = "SELECT * FROM Drivers " +
-                                    "WHERE username = '" + tb_username.Text + "' AND password = '" + tb_password.Text + "'";
-                    cmd = new SqlCommand(sql_query, cn);
-                    dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        dr.Close();
-                        this.Hide();
-                        Home home = new Home(tb_username.Text);
-                        home.ShowDialog();
-                    }
-                    else
-                    {
-                        dr.Close();
-                        MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        
+                    dr.Close();
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -107,6 +96,21 @@ namespace BookingDrive
         private void cb_type_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;  
+        }
+
+        private void btn_hidepassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            tb_password.PasswordChar = '\0';
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_hidepassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            tb_password.PasswordChar = '*';
         }
     }
 }

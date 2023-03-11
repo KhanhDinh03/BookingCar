@@ -36,12 +36,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_wallet = new System.Windows.Forms.Button();
-            this.btn_notification = new System.Windows.Forms.Button();
+            this.btn_history = new System.Windows.Forms.Button();
             this.btn_booking = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cb_destination = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cb_type = new System.Windows.Forms.ComboBox();
+            this.btn_refresh = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +76,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(523, 107);
+            this.btn_search.Location = new System.Drawing.Point(446, 107);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(90, 23);
             this.btn_search.TabIndex = 5;
@@ -103,6 +104,7 @@
             // 
             // tb_mylocation
             // 
+            this.tb_mylocation.Enabled = false;
             this.tb_mylocation.Location = new System.Drawing.Point(124, 39);
             this.tb_mylocation.Name = "tb_mylocation";
             this.tb_mylocation.Size = new System.Drawing.Size(152, 20);
@@ -119,7 +121,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.btn_home, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_wallet, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_notification, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_history, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_booking, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 608);
@@ -138,6 +140,7 @@
             this.btn_home.TabIndex = 0;
             this.btn_home.Text = "Trang chủ";
             this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // btn_wallet
             // 
@@ -148,16 +151,18 @@
             this.btn_wallet.TabIndex = 1;
             this.btn_wallet.Text = "Ví";
             this.btn_wallet.UseVisualStyleBackColor = true;
+            this.btn_wallet.Click += new System.EventHandler(this.btn_wallet_Click);
             // 
-            // btn_notification
+            // btn_history
             // 
-            this.btn_notification.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_notification.Location = new System.Drawing.Point(395, 3);
-            this.btn_notification.Name = "btn_notification";
-            this.btn_notification.Size = new System.Drawing.Size(190, 47);
-            this.btn_notification.TabIndex = 2;
-            this.btn_notification.Text = "Thông báo";
-            this.btn_notification.UseVisualStyleBackColor = true;
+            this.btn_history.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_history.Location = new System.Drawing.Point(395, 3);
+            this.btn_history.Name = "btn_history";
+            this.btn_history.Size = new System.Drawing.Size(190, 47);
+            this.btn_history.TabIndex = 2;
+            this.btn_history.Text = "Lịch sử";
+            this.btn_history.UseVisualStyleBackColor = true;
+            this.btn_history.Click += new System.EventHandler(this.btn_history_Click);
             // 
             // btn_booking
             // 
@@ -171,6 +176,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_refresh);
             this.panel1.Controls.Add(this.cb_destination);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cb_type);
@@ -191,6 +197,8 @@
             this.cb_destination.Name = "cb_destination";
             this.cb_destination.Size = new System.Drawing.Size(152, 21);
             this.cb_destination.TabIndex = 8;
+            this.cb_destination.SelectedIndexChanged += new System.EventHandler(this.cb_destination_SelectedIndexChanged);
+            this.cb_destination.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_destination_KeyPress);
             // 
             // label3
             // 
@@ -204,10 +212,24 @@
             // cb_type
             // 
             this.cb_type.FormattingEnabled = true;
+            this.cb_type.Items.AddRange(new object[] {
+            "Xe 4 chỗ",
+            "Xe 7 chỗ"});
             this.cb_type.Location = new System.Drawing.Point(124, 109);
             this.cb_type.Name = "cb_type";
             this.cb_type.Size = new System.Drawing.Size(152, 21);
             this.cb_type.TabIndex = 6;
+            this.cb_type.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_type_KeyPress);
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(574, 107);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(90, 23);
+            this.btn_refresh.TabIndex = 9;
+            this.btn_refresh.Text = "Làm mới";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // BookingForCustomer
             // 
@@ -217,8 +239,11 @@
             this.Controls.Add(this.gmap);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BookingForCustomer";
-            this.Text = "BookingForCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đặt xe";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BookingForCustomer_FormClosing);
             this.Load += new System.EventHandler(this.BookingForCustomer_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -237,11 +262,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button btn_wallet;
-        private System.Windows.Forms.Button btn_notification;
+        private System.Windows.Forms.Button btn_history;
         private System.Windows.Forms.Button btn_booking;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cb_type;
         private System.Windows.Forms.ComboBox cb_destination;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }
