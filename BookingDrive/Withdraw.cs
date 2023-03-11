@@ -15,7 +15,6 @@ namespace BookingDrive
     {
         SqlCommand cmd;
         SqlConnection cn;
-        SqlDataAdapter da;
         SqlDataReader dr;
 
         string connection_string = @"Data Source=KHANHDINH; " +
@@ -98,11 +97,6 @@ namespace BookingDrive
                 DialogResult dialogResult = MessageBox.Show("Số dư trong tài khoản không đủ!", "Thông báo", MessageBoxButtons.OK);
             }
             
-        }
-
-        private void Withdraw_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

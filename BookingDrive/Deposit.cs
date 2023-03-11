@@ -16,7 +16,6 @@ namespace BookingDrive
     {
         SqlCommand cmd;
         SqlConnection cn;
-        SqlDataAdapter da;
         SqlDataReader dr;
 
         string connection_string = @"Data Source=KHANHDINH; " +
@@ -91,11 +90,6 @@ namespace BookingDrive
             {
                 e.Handled = true;
             }
-        }
-
-        private void Deposit_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

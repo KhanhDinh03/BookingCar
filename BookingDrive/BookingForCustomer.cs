@@ -46,38 +46,7 @@ namespace BookingDrive
 
         private void BookingForCustomer_Load(object sender, EventArgs e)
         {
-            cn = new SqlConnection(connection_string);
-            cn.Open();
-            gmap.ShowCenter = false;
-            gmap.DragButton = MouseButtons.Left;
-            gmap.MapProvider = GMapProviders.BingMap;
-            gmap.Position = new PointLatLng(21.007818087264067, 105.8237949069307); // Tọa độ Đh thuỷ lợi
-            _points.Add(gmap.Position);
-            gmap.MinZoom = 1;
-            gmap.MaxZoom = 20;
-            gmap.Zoom = 15;
 
-            GMapOverlay markersOverlay = new GMapOverlay("markers");
-            gmap.Overlays.Add(markersOverlay);
-
-            // Khởi tạo đánh dấu của bạn
-            GMapMarker marker = new GMarkerGoogle(gmap.Position, GMarkerGoogleType.red_dot);
-
-            // Thêm đánh dấu vào lớp GMapOverlay
-            markersOverlay.Markers.Add(marker);
-
-            string sql_query =  "SELECT address FROM Locations";
-
-            cmd = new SqlCommand(sql_query, cn);
-            dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                string value = dr.GetString(0);
-                cb_destination.Items.Add(value);
-                
-            }
-            dr.Close();
         }
 
         private void cb_destination_KeyPress(object sender, KeyPressEventArgs e)
@@ -108,21 +77,21 @@ namespace BookingDrive
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Home home = new Home(_fullname, _username);
             home.ShowDialog();
         }
 
         private void btn_history_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             History history = new History(_fullname, _username);
             history.ShowDialog();
         }
 
         private void btn_wallet_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Wallet wallet = new Wallet(_fullname, _username);
             wallet.ShowDialog();
         }
@@ -135,11 +104,6 @@ namespace BookingDrive
                 gmap.Overlays.RemoveAt(1);
             }
             gmap.Refresh();
-        }
-
-        private void BookingForCustomer_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
 
         private void btn_search_Click(object sender, EventArgs e)

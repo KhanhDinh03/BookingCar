@@ -14,7 +14,6 @@ namespace BookingDrive
 {
     public partial class History : Form
     {
-        SqlCommand cmd;
         SqlConnection cn;
         SqlDataAdapter da;
 
@@ -72,20 +71,20 @@ namespace BookingDrive
         }
         private void btn_home_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Home home = new Home(_fullname, _username);
             home.ShowDialog();
         }
         private void btn_booking_Click(object sender, EventArgs e)
         {
-            this.Close();
-            BookingForCustomer bookingDrive = new BookingForCustomer(_fullname, _username);
-            bookingDrive.Show();
+            this.Hide();
+            BookingForCustomer booking = new BookingForCustomer(_fullname, _username);
+            booking.Show();
         }
 
         private void btn_wallet_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Wallet wallet = new Wallet(_fullname, _username);
             wallet.ShowDialog();
         }
@@ -100,11 +99,6 @@ namespace BookingDrive
                     e.Value = value.ToString("N0").Replace(",", ".");
                 }
             }
-        }
-
-        private void History_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

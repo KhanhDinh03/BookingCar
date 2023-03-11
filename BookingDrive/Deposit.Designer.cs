@@ -109,7 +109,6 @@
             this.Name = "Deposit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deposit";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Deposit_FormClosing);
             this.Load += new System.EventHandler(this.Deposit_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

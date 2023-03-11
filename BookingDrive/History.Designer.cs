@@ -149,7 +149,6 @@
             this.Name = "History";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lịch sử";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.History_FormClosing);
             this.Load += new System.EventHandler(this.Historycs_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

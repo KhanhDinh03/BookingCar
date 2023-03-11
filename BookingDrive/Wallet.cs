@@ -34,21 +34,21 @@ namespace BookingDrive
 
         private void btn_history_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             History history = new History(_fullname, _username);
             history.Show();
         }
 
         private void btn_booking_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             BookingForCustomer booking = new BookingForCustomer(_fullname, _username);
             booking.Show();
         }
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Home home = new Home(_fullname, _username);
             home.Show();
         }
@@ -101,11 +101,6 @@ namespace BookingDrive
             this.SendToBack();
             Withdraw withdraw = new Withdraw(_fullname, _username);
             withdraw.ShowDialog();
-        }
-
-        private void Wallet_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

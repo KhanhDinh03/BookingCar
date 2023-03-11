@@ -180,7 +180,6 @@
             this.Name = "Wallet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wallet";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Wallet_FormClosing);
             this.Load += new System.EventHandler(this.Wallet_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
