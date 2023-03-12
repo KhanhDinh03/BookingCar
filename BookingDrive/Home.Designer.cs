@@ -38,8 +38,15 @@
             this.btn_booking = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_welcome
@@ -57,7 +64,7 @@
             this.btn_logout.Location = new System.Drawing.Point(666, 30);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(75, 23);
-            this.btn_logout.TabIndex = 1;
+            this.btn_logout.TabIndex = 5;
             this.btn_logout.Text = "Đăng xuất";
             this.btn_logout.UseVisualStyleBackColor = true;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
@@ -87,7 +94,7 @@
             this.btn_home.Location = new System.Drawing.Point(3, 3);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(190, 47);
-            this.btn_home.TabIndex = 0;
+            this.btn_home.TabIndex = 1;
             this.btn_home.Text = "Trang chủ";
             this.btn_home.UseVisualStyleBackColor = true;
             // 
@@ -97,7 +104,7 @@
             this.btn_wallet.Location = new System.Drawing.Point(591, 3);
             this.btn_wallet.Name = "btn_wallet";
             this.btn_wallet.Size = new System.Drawing.Size(190, 47);
-            this.btn_wallet.TabIndex = 1;
+            this.btn_wallet.TabIndex = 4;
             this.btn_wallet.Text = "Ví";
             this.btn_wallet.UseVisualStyleBackColor = true;
             this.btn_wallet.Click += new System.EventHandler(this.btn_wallet_Click);
@@ -108,7 +115,7 @@
             this.btn_history.Location = new System.Drawing.Point(395, 3);
             this.btn_history.Name = "btn_history";
             this.btn_history.Size = new System.Drawing.Size(190, 47);
-            this.btn_history.TabIndex = 2;
+            this.btn_history.TabIndex = 3;
             this.btn_history.Text = "Lịch sử";
             this.btn_history.UseVisualStyleBackColor = true;
             this.btn_history.Click += new System.EventHandler(this.btn_history_Click);
@@ -119,7 +126,7 @@
             this.btn_booking.Location = new System.Drawing.Point(199, 3);
             this.btn_booking.Name = "btn_booking";
             this.btn_booking.Size = new System.Drawing.Size(190, 47);
-            this.btn_booking.TabIndex = 3;
+            this.btn_booking.TabIndex = 2;
             this.btn_booking.Text = "Đặt xe";
             this.btn_booking.UseVisualStyleBackColor = true;
             this.btn_booking.Click += new System.EventHandler(this.btn_booking_Click);
@@ -136,11 +143,42 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(784, 531);
             this.panel2.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 47);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(167, 437);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(309, 47);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(167, 437);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(574, 47);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(167, 437);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // Home
             // 
@@ -158,6 +196,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +215,8 @@
         private System.Windows.Forms.Button btn_booking;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

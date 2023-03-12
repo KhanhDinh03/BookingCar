@@ -71,7 +71,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(170, 18);
+            this.label4.Location = new System.Drawing.Point(170, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 31);
             this.label4.TabIndex = 11;
@@ -93,7 +93,7 @@
             this.tb_password.Location = new System.Drawing.Point(204, 170);
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(238, 22);
-            this.tb_password.TabIndex = 3;
+            this.tb_password.TabIndex = 2;
             // 
             // tb_username
             // 
@@ -102,7 +102,7 @@
             this.tb_username.Location = new System.Drawing.Point(204, 127);
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(238, 22);
-            this.tb_username.TabIndex = 2;
+            this.tb_username.TabIndex = 1;
             // 
             // label3
             // 
@@ -141,7 +141,7 @@
             this.tb_phone.Location = new System.Drawing.Point(204, 304);
             this.tb_phone.Name = "tb_phone";
             this.tb_phone.Size = new System.Drawing.Size(238, 22);
-            this.tb_phone.TabIndex = 6;
+            this.tb_phone.TabIndex = 7;
             this.tb_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_phone_KeyPress);
             // 
             // tb_fullname
@@ -151,7 +151,7 @@
             this.tb_fullname.Location = new System.Drawing.Point(204, 261);
             this.tb_fullname.Name = "tb_fullname";
             this.tb_fullname.Size = new System.Drawing.Size(238, 22);
-            this.tb_fullname.TabIndex = 5;
+            this.tb_fullname.TabIndex = 6;
             // 
             // label7
             // 
@@ -177,10 +177,10 @@
             // 
             this.btn_hidepassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_hidepassword.Image")));
             this.btn_hidepassword.Location = new System.Drawing.Point(454, 172);
-            this.btn_hidepassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_hidepassword.Margin = new System.Windows.Forms.Padding(2);
             this.btn_hidepassword.Name = "btn_hidepassword";
             this.btn_hidepassword.Size = new System.Drawing.Size(20, 19);
-            this.btn_hidepassword.TabIndex = 22;
+            this.btn_hidepassword.TabIndex = 3;
             this.btn_hidepassword.UseVisualStyleBackColor = true;
             this.btn_hidepassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_hidepassword_MouseDown);
             this.btn_hidepassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_hidepassword_MouseUp);
@@ -189,10 +189,10 @@
             // 
             this.btn_hidecfpassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_hidecfpassword.Image")));
             this.btn_hidecfpassword.Location = new System.Drawing.Point(454, 215);
-            this.btn_hidecfpassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_hidecfpassword.Margin = new System.Windows.Forms.Padding(2);
             this.btn_hidecfpassword.Name = "btn_hidecfpassword";
             this.btn_hidecfpassword.Size = new System.Drawing.Size(20, 19);
-            this.btn_hidecfpassword.TabIndex = 23;
+            this.btn_hidecfpassword.TabIndex = 5;
             this.btn_hidecfpassword.UseVisualStyleBackColor = true;
             this.btn_hidecfpassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_hidecfpassword_MouseDown);
             this.btn_hidecfpassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_hidecfpassword_MouseUp);

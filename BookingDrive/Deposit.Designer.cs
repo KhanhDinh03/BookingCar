@@ -39,20 +39,22 @@
             // 
             // btn_deposit
             // 
+            this.btn_deposit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_deposit.Location = new System.Drawing.Point(272, 333);
             this.btn_deposit.Name = "btn_deposit";
             this.btn_deposit.Size = new System.Drawing.Size(109, 38);
-            this.btn_deposit.TabIndex = 0;
+            this.btn_deposit.TabIndex = 2;
             this.btn_deposit.Text = "Nạp";
             this.btn_deposit.UseVisualStyleBackColor = true;
             this.btn_deposit.Click += new System.EventHandler(this.btn_deposit_Click);
             // 
             // btn_forward
             // 
+            this.btn_forward.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_forward.Location = new System.Drawing.Point(22, 37);
             this.btn_forward.Name = "btn_forward";
             this.btn_forward.Size = new System.Drawing.Size(75, 23);
-            this.btn_forward.TabIndex = 1;
+            this.btn_forward.TabIndex = 3;
             this.btn_forward.Text = "Trở lại";
             this.btn_forward.UseVisualStyleBackColor = true;
             this.btn_forward.Click += new System.EventHandler(this.btn_forward_Click);
@@ -83,7 +85,7 @@
             this.tb_money.Location = new System.Drawing.Point(183, 255);
             this.tb_money.Name = "tb_money";
             this.tb_money.Size = new System.Drawing.Size(286, 20);
-            this.tb_money.TabIndex = 6;
+            this.tb_money.TabIndex = 1;
             this.tb_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_money_KeyPress);
             // 
             // label2
@@ -100,6 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_forward;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_money);

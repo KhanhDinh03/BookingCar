@@ -159,11 +159,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookingForCustomer.cs">
+    <Compile Include="Booking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookingForCustomer.Designer.cs">
-      <DependentUpon>BookingForCustomer.cs</DependentUpon>
+    <Compile Include="Booking.Designer.cs">
+      <DependentUpon>Booking.cs</DependentUpon>
     </Compile>
     <Compile Include="Deposit.cs">
       <SubType>Form</SubType>
@@ -209,8 +209,8 @@
     <Compile Include="Withdraw.Designer.cs">
       <DependentUpon>Withdraw.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookingForCustomer.resx">
-      <DependentUpon>BookingForCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Booking.resx">
+      <DependentUpon>Booking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Deposit.resx">
       <DependentUpon>Deposit.cs</DependentUpon>

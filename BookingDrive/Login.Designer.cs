@@ -93,7 +93,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(170, 18);
+            this.label3.Location = new System.Drawing.Point(170, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 31);
             this.label3.TabIndex = 6;
@@ -124,7 +124,7 @@
             // 
             this.btn_hidepassword.Image = ((System.Drawing.Image)(resources.GetObject("btn_hidepassword.Image")));
             this.btn_hidepassword.Location = new System.Drawing.Point(454, 163);
-            this.btn_hidepassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_hidepassword.Margin = new System.Windows.Forms.Padding(2);
             this.btn_hidepassword.Name = "btn_hidepassword";
             this.btn_hidepassword.Size = new System.Drawing.Size(20, 19);
             this.btn_hidepassword.TabIndex = 23;

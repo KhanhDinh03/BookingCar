@@ -53,7 +53,7 @@
             this.tb_money.Location = new System.Drawing.Point(184, 279);
             this.tb_money.Name = "tb_money";
             this.tb_money.Size = new System.Drawing.Size(286, 20);
-            this.tb_money.TabIndex = 10;
+            this.tb_money.TabIndex = 1;
             this.tb_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_money_KeyPress);
             // 
             // panel1
@@ -78,10 +78,11 @@
             // 
             // btn_forward
             // 
+            this.btn_forward.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_forward.Location = new System.Drawing.Point(22, 37);
             this.btn_forward.Name = "btn_forward";
             this.btn_forward.Size = new System.Drawing.Size(75, 23);
-            this.btn_forward.TabIndex = 1;
+            this.btn_forward.TabIndex = 3;
             this.btn_forward.Text = "Trở lại";
             this.btn_forward.UseVisualStyleBackColor = true;
             this.btn_forward.Click += new System.EventHandler(this.btn_forward_Click);
@@ -91,7 +92,7 @@
             this.btn_withdraw.Location = new System.Drawing.Point(263, 347);
             this.btn_withdraw.Name = "btn_withdraw";
             this.btn_withdraw.Size = new System.Drawing.Size(102, 38);
-            this.btn_withdraw.TabIndex = 8;
+            this.btn_withdraw.TabIndex = 2;
             this.btn_withdraw.Text = "Rút";
             this.btn_withdraw.UseVisualStyleBackColor = true;
             this.btn_withdraw.Click += new System.EventHandler(this.btn_withdraw_Click);
@@ -100,6 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_forward;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_money);

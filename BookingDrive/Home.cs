@@ -37,19 +37,19 @@ namespace BookingDrive
 
         private void btn_booking_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            BookingForCustomer booking = new BookingForCustomer(_fullname, _username);
+            this.Close();
+            Booking booking = new Booking(_fullname, _username);
             booking.ShowDialog();
         }
         private void btn_history_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             History history = new History(_fullname, _username);
             history.ShowDialog();
         }
         private void btn_wallet_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Wallet wallet = new Wallet(_fullname, _username);
             wallet.ShowDialog();
         }

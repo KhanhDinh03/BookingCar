@@ -59,7 +59,7 @@ namespace BookingDrive
                         }
                         else
                         {
-                            string sql_insert = "INSERT INTO Customers " +
+                            string sql_insert = "INSERT INTO Customers(username, password, phone, fullname) " +
                                          "VALUES('" + tb_username.Text + "' ,'" + tb_password.Text + "', '" + tb_phone.Text + "', N'" + tb_fullname.Text + "')";
                             dr.Close();
                             cmd = new SqlCommand(sql_insert, cn);
@@ -83,11 +83,6 @@ namespace BookingDrive
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
-        }
-
-        private void cb_type_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
         }
 
         private void btn_hidepassword_MouseDown(object sender, MouseEventArgs e)

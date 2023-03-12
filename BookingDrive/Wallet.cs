@@ -34,21 +34,21 @@ namespace BookingDrive
 
         private void btn_history_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             History history = new History(_fullname, _username);
             history.Show();
         }
 
         private void btn_booking_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            BookingForCustomer booking = new BookingForCustomer(_fullname, _username);
+            this.Close();
+            Booking booking = new Booking(_fullname, _username);
             booking.Show();
         }
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Home home = new Home(_fullname, _username);
             home.Show();
         }

@@ -1,6 +1,6 @@
 ﻿namespace BookingDrive
 {
-    partial class BookingForCustomer
+    partial class Booking
     {
         /// <summary>
         /// Required designer variable.
@@ -79,7 +79,7 @@
             this.btn_search.Location = new System.Drawing.Point(446, 107);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(90, 23);
-            this.btn_search.TabIndex = 5;
+            this.btn_search.TabIndex = 3;
             this.btn_search.Text = "Tìm";
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
@@ -137,7 +137,7 @@
             this.btn_home.Location = new System.Drawing.Point(3, 3);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(190, 47);
-            this.btn_home.TabIndex = 0;
+            this.btn_home.TabIndex = 5;
             this.btn_home.Text = "Trang chủ";
             this.btn_home.UseVisualStyleBackColor = true;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
@@ -148,7 +148,7 @@
             this.btn_wallet.Location = new System.Drawing.Point(591, 3);
             this.btn_wallet.Name = "btn_wallet";
             this.btn_wallet.Size = new System.Drawing.Size(190, 47);
-            this.btn_wallet.TabIndex = 1;
+            this.btn_wallet.TabIndex = 8;
             this.btn_wallet.Text = "Ví";
             this.btn_wallet.UseVisualStyleBackColor = true;
             this.btn_wallet.Click += new System.EventHandler(this.btn_wallet_Click);
@@ -159,7 +159,7 @@
             this.btn_history.Location = new System.Drawing.Point(395, 3);
             this.btn_history.Name = "btn_history";
             this.btn_history.Size = new System.Drawing.Size(190, 47);
-            this.btn_history.TabIndex = 2;
+            this.btn_history.TabIndex = 7;
             this.btn_history.Text = "Lịch sử";
             this.btn_history.UseVisualStyleBackColor = true;
             this.btn_history.Click += new System.EventHandler(this.btn_history_Click);
@@ -170,7 +170,7 @@
             this.btn_booking.Location = new System.Drawing.Point(199, 3);
             this.btn_booking.Name = "btn_booking";
             this.btn_booking.Size = new System.Drawing.Size(190, 47);
-            this.btn_booking.TabIndex = 3;
+            this.btn_booking.TabIndex = 6;
             this.btn_booking.Text = "Đặt xe";
             this.btn_booking.UseVisualStyleBackColor = true;
             // 
@@ -195,7 +195,7 @@
             this.btn_refresh.Location = new System.Drawing.Point(574, 107);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(90, 23);
-            this.btn_refresh.TabIndex = 9;
+            this.btn_refresh.TabIndex = 4;
             this.btn_refresh.Text = "Làm mới";
             this.btn_refresh.UseVisualStyleBackColor = true;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
@@ -206,7 +206,7 @@
             this.cb_destination.Location = new System.Drawing.Point(492, 39);
             this.cb_destination.Name = "cb_destination";
             this.cb_destination.Size = new System.Drawing.Size(152, 21);
-            this.cb_destination.TabIndex = 8;
+            this.cb_destination.TabIndex = 1;
             this.cb_destination.SelectedIndexChanged += new System.EventHandler(this.cb_destination_SelectedIndexChanged);
             this.cb_destination.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_destination_KeyPress);
             // 
@@ -228,10 +228,10 @@
             this.cb_type.Location = new System.Drawing.Point(124, 109);
             this.cb_type.Name = "cb_type";
             this.cb_type.Size = new System.Drawing.Size(152, 21);
-            this.cb_type.TabIndex = 6;
+            this.cb_type.TabIndex = 2;
             this.cb_type.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cb_type_KeyPress);
             // 
-            // BookingForCustomer
+            // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -240,7 +240,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "BookingForCustomer";
+            this.Name = "Booking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đặt xe";
             this.Load += new System.EventHandler(this.BookingForCustomer_Load);

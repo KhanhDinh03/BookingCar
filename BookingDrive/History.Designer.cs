@@ -66,7 +66,7 @@
             this.btn_home.Location = new System.Drawing.Point(3, 3);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(190, 47);
-            this.btn_home.TabIndex = 0;
+            this.btn_home.TabIndex = 1;
             this.btn_home.Text = "Trang chủ";
             this.btn_home.UseVisualStyleBackColor = true;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
@@ -77,7 +77,7 @@
             this.btn_wallet.Location = new System.Drawing.Point(591, 3);
             this.btn_wallet.Name = "btn_wallet";
             this.btn_wallet.Size = new System.Drawing.Size(190, 47);
-            this.btn_wallet.TabIndex = 1;
+            this.btn_wallet.TabIndex = 4;
             this.btn_wallet.Text = "Ví";
             this.btn_wallet.UseVisualStyleBackColor = true;
             this.btn_wallet.Click += new System.EventHandler(this.btn_wallet_Click);
@@ -88,7 +88,7 @@
             this.btn_history.Location = new System.Drawing.Point(395, 3);
             this.btn_history.Name = "btn_history";
             this.btn_history.Size = new System.Drawing.Size(190, 47);
-            this.btn_history.TabIndex = 2;
+            this.btn_history.TabIndex = 3;
             this.btn_history.Text = "Lịch sử";
             this.btn_history.UseVisualStyleBackColor = true;
             // 
@@ -98,7 +98,7 @@
             this.btn_booking.Location = new System.Drawing.Point(199, 3);
             this.btn_booking.Name = "btn_booking";
             this.btn_booking.Size = new System.Drawing.Size(190, 47);
-            this.btn_booking.TabIndex = 3;
+            this.btn_booking.TabIndex = 2;
             this.btn_booking.Text = "Đặt xe";
             this.btn_booking.UseVisualStyleBackColor = true;
             this.btn_booking.Click += new System.EventHandler(this.btn_booking_Click);
