@@ -93,11 +93,6 @@ namespace BookingDrive
             register.ShowDialog();
         }
 
-        private void cb_type_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;  
-        }
-
         private void btn_hidepassword_MouseDown(object sender, MouseEventArgs e)
         {
             tb_password.PasswordChar = '\0';

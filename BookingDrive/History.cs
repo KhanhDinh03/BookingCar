@@ -71,20 +71,20 @@ namespace BookingDrive
         }
         private void btn_home_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Home home = new Home(_fullname, _username);
             home.ShowDialog();
         }
         private void btn_booking_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Booking booking = new Booking(_fullname, _username);
             booking.Show();
         }
 
         private void btn_wallet_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Wallet wallet = new Wallet(_fullname, _username);
             wallet.ShowDialog();
         }

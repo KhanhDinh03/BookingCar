@@ -111,21 +111,21 @@ namespace BookingDrive
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Home home = new Home(_fullname, _username);
             home.ShowDialog();
         }
 
         private void btn_history_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             History history = new History(_fullname, _username);
             history.ShowDialog();
         }
 
         private void btn_wallet_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Wallet wallet = new Wallet(_fullname, _username);
             wallet.ShowDialog();
         }
@@ -152,11 +152,6 @@ namespace BookingDrive
                     gmap.Refresh();
                 }
             }
-        }
-
-        public double distance(MapRoute route)
-        {
-            return route.Distance;
         }
 
         private void btn_search_Click(object sender, EventArgs e)
